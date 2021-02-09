@@ -23,14 +23,11 @@ export default function Routes() {
         keyboardHidesTabBar: true,
         showLabel: false,
         style: {
-          position: 'relative',
-          height: 67,
-          paddingVertical: 5,
+          height: 68,
           paddingHorizontal: 25,
           paddingBottom: 5,
-          display: 'flex',
-          alignItems: 'center',
           backgroundColor: '#000',
+          borderTopColor: 'transparent',
         },
       }}
       screenOptions={({route}) => ({

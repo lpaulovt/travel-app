@@ -34,5 +34,5 @@ export const Title = styled.Text`
 export const CarouselItem = styled.View`
   position: relative;
   overflow: hidden;
-  border-radius: 20;
+  border-radius: 20px;
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-
+import {RectButton} from 'react-native-gesture-handler';
 export const Item = styled.View`
   position: relative;
   display: flex;
@@ -48,7 +48,7 @@ export const Description = styled.Text`
   color: ${({theme}) => theme.colors.white};
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled(RectButton)`
   background-color: ${({theme}) => theme.colors.white};
 
   height: 50px;
