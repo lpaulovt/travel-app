@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-native-snap-carousel';
 import {Dimensions, Platform} from 'react-native';
-import {content} from './content';
+import {destinations} from '../../mock/destinations';
 
 import {Container, Header, Image, Title} from './styles';
 import CarouselItem from '../../components/CarouselItem';
@@ -12,7 +12,7 @@ import SvgMenu from '../../assets/SvgMenu';
 import SvgPoland from '../../assets/SvgPoland';
 import SvgFrance from '../../assets/SvgFrance';
 
-export default function Home() {
+export default function Home({navigation}) {
   const {width, height} = Dimensions.get('window');
   const ITEM_SIZE = Platform.OS === 'ios' ? width * 0.74 : width * 0.76;
 
@@ -47,11 +47,13 @@ export default function Home() {
       <Carousel
         firstItem={1}
         callbackOffsetMargin={0}
-        data={content}
+        data={destinations}
         sliderWidth={width}
         sliderHeight={height * 0.5}
         itemWidth={ITEM_SIZE}
-        renderItem={({item}) => <CarouselItem item={item} />}
+        renderItem={({item}) => (
+          <CarouselItem item={item} navigation={navigation} />
+        )}
       />
     </Container>
   );

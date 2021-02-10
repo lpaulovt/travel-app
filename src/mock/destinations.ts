@@ -1,10 +1,11 @@
-export const content = [
+export const destinations = [
   {
     id: 1,
     url: 'https://www.touropia.com/gfx/d/best-greek-islands/crete.jpg?v=1',
     name: 'Crete',
     description:
       'The largest of the Greek islands, Crete is a spacious land of pleasing contrasts where landscapes range from stunning coastline to rugged mountains and rolling countryside dotted with olive trees',
+    avaliation: 5.0,
   },
 
   {
@@ -14,6 +15,7 @@ export const content = [
     name: 'Zakynthos',
     description:
       'The heart of Greece. Stunning islands covered with trees, sky-blue sees and sandy beachs. Check it out!',
+    avaliation: 5.0,
   },
 
   {
@@ -24,6 +26,7 @@ export const content = [
     name: 'Athens',
     description:
       'Athens is widely known as the cradle of Western civilization and the birthplace of democracy. The city presents a confusing blend of historical and modern features.',
+    avaliation: 4.9,
   },
 
   {
@@ -33,5 +36,6 @@ export const content = [
     name: 'Greek Islands',
     description:
       ' With more than 2,000 islands to choose from they may initially be bewildered by their number and variety. From gorgeous beaches, ancient ruins, colorful harbors and active volcanoes the Greek islands have it all.',
+    avaliation: 4.8,
   },
 ];

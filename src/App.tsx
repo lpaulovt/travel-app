@@ -7,7 +7,7 @@ import {ThemeProvider} from 'styled-components';
 import Routes from './routes';
 import defaultTheme from './pages/styles/default';
 
-const App = () => {
+function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <NavigationContainer>
@@ -16,6 +16,6 @@ const App = () => {
       </NavigationContainer>
     </ThemeProvider>
   );
-};
+}
 
 export default App;

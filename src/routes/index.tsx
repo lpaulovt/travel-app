@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from '../pages/Home';
+import Details from '../pages/Details';
 import BookMark from '../pages/BookMark';
 import Ticket from '../pages/Ticket';
 import Send from '../pages/Send';
@@ -15,6 +16,25 @@ import SvgSend from '../assets/SvgSend';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
+function StackHome({navigation, route}) {
+  if (route.state.routes[route.state.index].name === 'Details') {
+    navigation.setOptions({tabBarVisible: false});
+  } else {
+    navigation.setOptions({tabBarVisible: true});
+  }
+
+  return (
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Details" component={Details} />
+    </Stack.Navigator>
+  );
+}
 
 export default function Routes() {
   return (
@@ -46,7 +66,7 @@ export default function Routes() {
           }
         },
       })}>
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={StackHome} />
       <Tab.Screen name="BookMark" component={BookMark} />
       <Tab.Screen name="Ticket" component={Ticket} />
       <Tab.Screen name="Send" component={Send} />
