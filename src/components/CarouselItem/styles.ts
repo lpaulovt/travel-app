@@ -11,7 +11,7 @@ export const Item = styled.View`
 export const Container = styled.View`
   position: relative;
   overflow: hidden;
-  border-radius: 20;
+  border-radius: 20px;
 `;
 
 export const Image = styled.Image`

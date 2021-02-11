@@ -81,7 +81,7 @@ export default function Details({route, navigation}) {
           <Label>Book a flight</Label>
           <SvgFlight />
         </Button>
-        <ButtonDetails>
+        <ButtonDetails onPress={() => navigation.navigate('Map')}>
           <SvgArrowShortUp />
           <LabelDetails style={{textTransform: 'uppercase'}}>
             Swipe for details

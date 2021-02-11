@@ -5,6 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from '../pages/Home';
 import Details from '../pages/Details';
+import Map from '../pages/Map';
 import BookMark from '../pages/BookMark';
 import Ticket from '../pages/Ticket';
 import Send from '../pages/Send';
@@ -18,11 +19,11 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function StackHome({navigation, route}) {
-  if (route.state.routes[route.state.index].name === 'Details') {
+  /*   if (route.state.routes[route.state.index].name === 'Details') {
     navigation.setOptions({tabBarVisible: false});
   } else {
     navigation.setOptions({tabBarVisible: true});
-  }
+  } */
 
   return (
     <Stack.Navigator
@@ -32,6 +33,7 @@ function StackHome({navigation, route}) {
       }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Details" component={Details} />
+      <Stack.Screen name="Map" component={Map} />
     </Stack.Navigator>
   );
 }
