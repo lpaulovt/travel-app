@@ -31,7 +31,7 @@ export default function Details({route, navigation}) {
   }
 
   const {destination_id} = route.params;
-  const [destination, setDestination] = useState<Destiny>({});
+  const [destination, setDestination] = useState<Destiny>({} as Destiny);
 
   useEffect(() => {
     setDestination(
@@ -42,7 +42,7 @@ export default function Details({route, navigation}) {
   return (
     <Container>
       <LinearGradient
-        locations={[0.5, 0.7, 0.9]}
+        locations={[0.1, 0.6, 0.9]}
         colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.6)', 'rgba(0,0,0,0.9)']}
         style={{
           elevation: 10,
@@ -81,7 +81,10 @@ export default function Details({route, navigation}) {
           <Label>Book a flight</Label>
           <SvgFlight />
         </Button>
-        <ButtonDetails onPress={() => navigation.navigate('Map')}>
+        <ButtonDetails
+          onPress={() =>
+            navigation.navigate('Map', {destination_id: destination_id})
+          }>
           <SvgArrowShortUp />
           <LabelDetails style={{textTransform: 'uppercase'}}>
             Swipe for details

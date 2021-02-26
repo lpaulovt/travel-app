@@ -25,7 +25,7 @@ export default function CarouselItem({item, navigation}) {
           width: ITEM_SIZE,
         }}>
         <LinearGradient
-          locations={[0.5, 0.7, 0.9]}
+          locations={[0.3, 0.7, 0.9]}
           colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.6)']}
           style={{
             elevation: 10,

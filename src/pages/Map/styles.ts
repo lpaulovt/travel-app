@@ -59,10 +59,11 @@ export const ButtonBack = styled(RectButton)`
 
   justify-content: center;
   align-items: center;
-  background-color: #41414115;
+  background-color: rgba(65, 65, 65, 0.49);
   position: absolute;
   top: 5%;
   left: 5%;
+  z-index: 10;
 `;
 
 export const Button = styled(button)`
