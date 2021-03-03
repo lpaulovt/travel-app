@@ -122,7 +122,7 @@ export default function Home({navigation}) {
           <ContainerCountry>
             <ContainerItem>
               <ShimmerPlaceHolder
-                style={{height: 60, width: 60, borderRadius: 30, opacity: 0.7}}
+                style={{height: 50, width: 50, borderRadius: 25, opacity: 0.7}}
                 width={300}
                 LinearGradient={LinearGradient}
                 duration={1000}
@@ -138,11 +138,11 @@ export default function Home({navigation}) {
             <ContainerItem>
               <ShimmerPlaceHolder
                 style={{
-                  height: 70,
-                  width: 70,
-                  borderRadius: 35,
-                  marginBottom: 20,
-                  marginHorizontal: 30,
+                  height: 60,
+                  width: 60,
+                  borderRadius: 30,
+                  marginBottom: 10,
+                  marginHorizontal: 35,
                 }}
                 width={300}
                 LinearGradient={LinearGradient}
@@ -150,7 +150,7 @@ export default function Home({navigation}) {
                 shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
               />
               <ShimmerPlaceHolder
-                style={{height: 17, width: 70}}
+                style={{height: 17, width: 70, marginBottom: 20}}
                 LinearGradient={LinearGradient}
                 duration={1000}
                 shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
@@ -158,7 +158,7 @@ export default function Home({navigation}) {
             </ContainerItem>
             <ContainerItem>
               <ShimmerPlaceHolder
-                style={{height: 60, width: 60, borderRadius: 30, opacity: 0.7}}
+                style={{height: 50, width: 50, borderRadius: 25, opacity: 0.7}}
                 width={300}
                 LinearGradient={LinearGradient}
                 duration={1000}
@@ -193,7 +193,7 @@ export default function Home({navigation}) {
                 height: height * 0.55,
                 width: ITEM_SIZE,
                 borderRadius: 35,
-                marginBottom: 50,
+                marginBottom: 30,
                 marginHorizontal: 10,
               }}
               LinearGradient={LinearGradient}

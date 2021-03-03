@@ -44,7 +44,7 @@ export const ContainerCountry = styled.View`
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 `;
 
 export const ContainerItem = styled.View`
