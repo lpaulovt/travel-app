@@ -7,7 +7,14 @@ import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
 const client = Prismic.client('https://travlr.cdn.prismic.io/api/v2');
 
-import {Container, Header, Image, Title, ContainerCountry} from './styles';
+import {
+  Container,
+  Header,
+  Image,
+  Title,
+  ContainerCountry,
+  ContainerItem,
+} from './styles';
 import CarouselItem from '../../components/CarouselItem';
 import Country from '../../components/Country/index';
 
@@ -113,34 +120,57 @@ export default function Home({navigation}) {
             />
           </Header>
           <ContainerCountry>
-            <ShimmerPlaceHolder
-              style={{height: 60, width: 60, borderRadius: 30, opacity: 0.7}}
-              width={300}
-              LinearGradient={LinearGradient}
-              duration={1000}
-              shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
-            />
-
-            <ShimmerPlaceHolder
-              style={{
-                height: 70,
-                width: 70,
-                borderRadius: 35,
-                marginBottom: 20,
-                marginHorizontal: 10,
-              }}
-              width={300}
-              LinearGradient={LinearGradient}
-              duration={1000}
-              shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
-            />
-            <ShimmerPlaceHolder
-              style={{height: 60, width: 60, borderRadius: 30, opacity: 0.7}}
-              width={300}
-              LinearGradient={LinearGradient}
-              duration={1000}
-              shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
-            />
+            <ContainerItem>
+              <ShimmerPlaceHolder
+                style={{height: 60, width: 60, borderRadius: 30, opacity: 0.7}}
+                width={300}
+                LinearGradient={LinearGradient}
+                duration={1000}
+                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+              />
+              <ShimmerPlaceHolder
+                style={{height: 17, width: 70, marginTop: 10}}
+                LinearGradient={LinearGradient}
+                duration={1000}
+                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+              />
+            </ContainerItem>
+            <ContainerItem>
+              <ShimmerPlaceHolder
+                style={{
+                  height: 70,
+                  width: 70,
+                  borderRadius: 35,
+                  marginBottom: 20,
+                  marginHorizontal: 30,
+                }}
+                width={300}
+                LinearGradient={LinearGradient}
+                duration={1000}
+                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+              />
+              <ShimmerPlaceHolder
+                style={{height: 17, width: 70}}
+                LinearGradient={LinearGradient}
+                duration={1000}
+                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+              />
+            </ContainerItem>
+            <ContainerItem>
+              <ShimmerPlaceHolder
+                style={{height: 60, width: 60, borderRadius: 30, opacity: 0.7}}
+                width={300}
+                LinearGradient={LinearGradient}
+                duration={1000}
+                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+              />
+              <ShimmerPlaceHolder
+                style={{height: 17, width: 70, marginTop: 10}}
+                LinearGradient={LinearGradient}
+                duration={1000}
+                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+              />
+            </ContainerItem>
           </ContainerCountry>
           <ContainerCountry>
             <ShimmerPlaceHolder

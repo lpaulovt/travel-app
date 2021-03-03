@@ -42,7 +42,14 @@ export const ContainerCountry = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   overflow: hidden;
   margin-bottom: 70px;
+`;
+
+export const ContainerItem = styled.View`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 `;
