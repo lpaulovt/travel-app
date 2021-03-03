@@ -5,8 +5,15 @@ const Context = createContext({});
 const ContextProvider = ({children}) => {
   const [data, setData] = useState(null);
   const [selectedData, setSelectedData] = useState(null);
+  console.log('Selected data', selectedData);
   return (
-    <Context.Provider value={{data: data, setData: setData}}>
+    <Context.Provider
+      value={{
+        data: data,
+        setData: setData,
+        selectedData: selectedData,
+        setSelectedData: setSelectedData,
+      }}>
       {children}
     </Context.Provider>
   );

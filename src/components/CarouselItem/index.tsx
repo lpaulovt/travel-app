@@ -1,6 +1,7 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {Dimensions, Platform} from 'react-native';
+import {use_Context} from '../../hooks/index';
 
 import {
   Item,
@@ -16,6 +17,7 @@ import {
 export default function CarouselItem({item, id, navigation}) {
   const {width, height} = Dimensions.get('window');
   const ITEM_SIZE = Platform.OS === 'ios' ? width * 0.72 : width * 0.74;
+  const {setSelectedData} = use_Context();
 
   return (
     <Item>
@@ -50,7 +52,10 @@ export default function CarouselItem({item, id, navigation}) {
         <Description>{item.description[0].text}</Description>
       </ContainerDescription>
       <Button
-        onPress={() => navigation.navigate('Details', {destination_id: id})}>
+        onPress={() => {
+          setSelectedData(item);
+          navigation.navigate('Details', {destination_id: id});
+        }}>
         <Label>Explore</Label>
       </Button>
     </Item>
