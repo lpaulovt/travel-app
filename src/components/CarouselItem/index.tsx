@@ -13,7 +13,7 @@ import {
   Description,
 } from './styles';
 
-export default function CarouselItem({item, navigation}) {
+export default function CarouselItem({item, id, navigation}) {
   const {width, height} = Dimensions.get('window');
   const ITEM_SIZE = Platform.OS === 'ios' ? width * 0.72 : width * 0.74;
 
@@ -41,18 +41,16 @@ export default function CarouselItem({item, navigation}) {
             resizeMode: 'cover',
           }}
           source={{
-            uri: item.url,
+            uri: item.url[0].text,
           }}
         />
       </Container>
       <ContainerDescription>
-        <Title>{item.name}</Title>
-        <Description>{item.description}</Description>
+        <Title>{item.name[0].text}</Title>
+        <Description>{item.description[0].text}</Description>
       </ContainerDescription>
       <Button
-        onPress={() =>
-          navigation.navigate('Details', {destination_id: item.id})
-        }>
+        onPress={() => navigation.navigate('Details', {destination_id: id})}>
         <Label>Explore</Label>
       </Button>
     </Item>

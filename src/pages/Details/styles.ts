@@ -65,6 +65,19 @@ export const ButtonBack = styled(RectButton)`
   left: 5%;
 `;
 
+export const ButtonFav = styled(RectButton)`
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+
+  justify-content: center;
+  align-items: center;
+  background-color: #41414115;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+`;
+
 export const Button = styled(button)`
   width: 100%;
   margin: 15px 0;

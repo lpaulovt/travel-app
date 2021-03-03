@@ -14,6 +14,8 @@ target 'travel_app' do
 
   pod 'SajjadBlurOverlay', :path => '../node_modules/react-native-blur-overlay'
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+
   target 'travel_appTests' do
     inherit! :complete
     # Pods for testing

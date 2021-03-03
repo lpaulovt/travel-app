@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   Container,
   Background,
@@ -13,13 +14,17 @@ import {
   Label,
   ButtonDetails,
   LabelDetails,
+  ButtonFav,
 } from './styles';
-import {destinations} from '../../mock/destinations';
+//import {destinations} from '../../mock/destinations';
+import {use_Context} from '../../hooks/index';
 import SvgStar from '../../assets/SvgStar';
-import {View} from 'react-native';
+import {View, Linking, Alert} from 'react-native';
 import SvgArrowLeft from '../../assets/SvgArrowLeft';
 import SvgFlight from '../../assets/SvgFlight';
 import SvgArrowShortUp from '../../assets/SvgArrowShortUp';
+import SvgHeart from '../../assets/SvgHeart';
+import {destinations} from 'src/mock/destinations';
 
 export default function Details({route, navigation}) {
   interface Destiny {
@@ -28,16 +33,57 @@ export default function Details({route, navigation}) {
     name: string;
     description: string;
     avaliation: number;
+    location: Array<number>;
+    hotels: Hotel;
   }
 
+  interface Hotel {
+    id: number;
+    name: string;
+    stars: number;
+    price: string;
+    photo: string;
+    coordinates: Array<number>;
+  }
+
+  let Favorite = [];
   const {destination_id} = route.params;
   const [destination, setDestination] = useState<Destiny>({} as Destiny);
+  const {data} = use_Context();
+
+  const supportedURL =
+    'https://www.google.com/travel/explore?tfs=CBwQAxoZagsIAxIHL20vMG4yehIKMjAyMS0wMy0xNBoZEgoyMDIxLTAzLTE4cgsIAxIHL20vMG4yenACggELCP___________wFAAUgBmAEB&tfu=GioaKAoSCTIfcVECGUVAEbcZMC3DD0BAEhIJg3JMLc2iQUARbjNgWoZ6MEA&hl=pt-PT&gl=BR&tcfs=ChYKCS9tLzAxdDBuMhoJWmFxdWludG9zEjAKCS9tLzAxdDBuMhIJWmFxdWludG9zGhgKCjIwMjEtMDMtMTQSCjIwMjEtMDMtMThSAmAB';
+
+  const handlePress = useCallback(async () => {
+    const supported = await Linking.canOpenURL(supportedURL);
+
+    if (supported) {
+      await Linking.openURL(supportedURL);
+    } else {
+      Alert.alert(`Don't know how to open this URL: ${supportedURL}`);
+    }
+  }, [supportedURL]);
+
+  const favorite = async () => {
+    const data = [...Favorite, destination];
+
+    await AsyncStorage.setItem('@Travlr:favorites', JSON.stringify(data));
+    console.log('Add');
+  };
+
+  const getFavorite = async () => {
+    Favorite = await AsyncStorage.getItem('@Travlr:favorites');
+    console.log('Favorite: ', JSON.parse(Favorite));
+  };
 
   useEffect(() => {
+    getFavorite();
+
     setDestination(
-      destinations.find((destination) => destination.id === destination_id),
+      data.find((destination) => destination.id === destination_id),
     );
   }, []);
+  console.log(destination);
 
   return (
     <Container>
@@ -55,7 +101,7 @@ export default function Details({route, navigation}) {
       />
 
       <Background
-        source={{uri: destination.url}}
+        source={{uri: destination.data.url[0].text}}
         style={{resizeMode: 'cover'}}
       />
 
@@ -63,21 +109,25 @@ export default function Details({route, navigation}) {
         <SvgArrowLeft />
       </ButtonBack>
 
+      <ButtonFav onPress={() => favorite()}>
+        <SvgHeart />
+      </ButtonFav>
+
       <Content style={{position: 'absolute', elevation: 11, minHeight: 150}}>
         <Header>
-          <Title>{destination.name}</Title>
+          <Title>{destination.data.name[0].text}</Title>
           <View
             style={{
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-between',
             }}>
-            <Avaliation>{destination.avaliation}</Avaliation>
+            <Avaliation>{destination.data.avaliation}</Avaliation>
             <SvgStar />
           </View>
         </Header>
-        <Description>{destination.description}</Description>
-        <Button>
+        <Description>{destination.data.description[0].text}</Description>
+        <Button onPress={() => handlePress()}>
           <Label>Book a flight</Label>
           <SvgFlight />
         </Button>

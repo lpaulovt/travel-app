@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {Container, ButtonBack} from './styles';
 import {destinations} from '../../mock/destinations';
+import {use_Context} from '../../hooks/index';
 
 import MapboxGL from '@react-native-mapbox-gl/maps';
 import MarkerInfo from '../../components/MarkerInfo/index';
@@ -31,9 +32,12 @@ export default function Map({route, navigation}) {
     hotels: Array<[Hotel]>;
   }
   const {destination_id} = route.params;
-  const [destination, setDestination] = useState<Destiny>([] as Destiny);
+  const {data} = use_Context();
+
+  //const [destination, setDestination] = useState<Destiny>([] as Destiny);
   const [isLoading, setIsLoading] = useState(true);
   const [getHotelInfo, setGetHotelInfo] = useState({});
+  const [isLoadingMap, setIsLoadingMap] = useState(true);
   useEffect(() => {
     setDestination(
       destinations.find((destination) => destination.id === destination_id),
@@ -56,15 +60,19 @@ export default function Map({route, navigation}) {
               bottom: -25,
               top: 0,
             }}
-            accessToken={
-              'pk.eyJ1IjoibHBhdWxvdnQiLCJhIjoiY2tnNnF0YjB2MDAwaTJ5cW1oZ3p4bHJmcCJ9.yABBQvCgMruQef1-IRMedA'
-            }
-            styleURL={'mapbox://styles/lpaulovt/cklkyxt6j0l4417pag6ta972j'}
+            preferredFramesPerSecond={900000}
+            accessToken="pk.eyJ1IjoibHBhdWxvdnQiLCJhIjoiY2tnNnF0YjB2MDAwaTJ5cW1oZ3p4bHJmcCJ9.yABBQvCgMruQef1-IRMedA"
+            styleURL={'mapbox://styles/lpaulovt/cklkz2cno2d9y17qm7oa2vw62'}
             zoomEnabled={true}
             rotateEnabled={true}
             surfaceView={true}
             scrollEnabled={true}
-            localizeLabels={false}>
+            localizeLabels={false}
+            onDidFinishLoadingMap={() =>
+              setTimeout(() => {
+                setIsLoadingMap(false);
+              }, 500)
+            }>
             <MapboxGL.Camera
               centerCoordinate={
                 destination.location !== undefined
@@ -74,7 +82,7 @@ export default function Map({route, navigation}) {
               zoomLevel={12}
               pitch={90}
             />
-            {destination.hotels !== undefined
+            {destination.hotels !== undefined && isLoadingMap === false
               ? destination.hotels.map((hotel) => (
                   <TouchableOpacity
                     onPress={() => {

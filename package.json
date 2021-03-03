@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/blur": "^3.6.0",
+    "@react-native-async-storage/async-storage": "^1.14.1",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-mapbox-gl/maps": "^8.1.0",
     "@react-navigation/bottom-tabs": "^5.11.7",
@@ -19,6 +19,7 @@
     "@types/react": "^17.0.1",
     "@types/react-native": "^0.63.48",
     "@types/react-native-snap-carousel": "^3.8.2",
+    "prismic-javascript": "^3.0.2",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-gesture-handler": "^1.9.0",
