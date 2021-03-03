@@ -36,3 +36,13 @@ export const CarouselItem = styled.View`
   overflow: hidden;
   border-radius: 20px;
 `;
+
+export const ContainerCountry = styled.View`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 70px;
+`;

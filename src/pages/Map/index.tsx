@@ -34,8 +34,8 @@ export default function Map({route, navigation}) {
 
   const {selectedData} = use_Context();
   const destination: Destiny = selectedData;
-
   const [getHotelInfo, setGetHotelInfo] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <Container>
@@ -59,7 +59,8 @@ export default function Map({route, navigation}) {
           rotateEnabled={true}
           surfaceView={true}
           scrollEnabled={true}
-          localizeLabels={false}>
+          localizeLabels={false}
+          onDidFinishLoadingMap={() => setIsLoading(false)}>
           <MapboxGL.Camera
             centerCoordinate={
               destination.location !== undefined
@@ -69,17 +70,15 @@ export default function Map({route, navigation}) {
                   ]
                 : [0, 0]
             }
-            zoomLevel={12}
+            zoomLevel={10}
             pitch={90}
           />
-          {destination.hotels !== undefined
+          {destination.hotels !== undefined && isLoading === false
             ? destination.hotels.map((hotel) => (
                 <TouchableOpacity
                   key={hotel.name1[0].text}
                   onPress={() => {
-                    setGetHotelInfo(
-                      destination.hotels.find((item) => item.id === hotel.id),
-                    );
+                    setGetHotelInfo(hotel);
                   }}>
                   <MapboxGL.MarkerView
                     id="rocketseat"

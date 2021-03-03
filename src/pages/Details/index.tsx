@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import {
   Container,
   Background,
@@ -16,7 +16,7 @@ import {
   LabelDetails,
   ButtonFav,
 } from './styles';
-//import {destinations} from '../../mock/destinations';
+
 import {use_Context} from '../../hooks/index';
 import SvgStar from '../../assets/SvgStar';
 import {View, Linking, Alert} from 'react-native';
@@ -45,7 +45,6 @@ export default function Details({route, navigation}) {
     coordinates: Array<number>;
   }
 
-  const {destination_id} = route.params;
   const {selectedData} = use_Context();
   const destination: Destiny = selectedData;
   const supportedURL =
@@ -60,8 +59,6 @@ export default function Details({route, navigation}) {
       Alert.alert(`Don't know how to open this URL: ${supportedURL}`);
     }
   }, [supportedURL]);
-
-  console.log('Data', destination.url[0].text);
 
   return (
     <Container>
@@ -111,7 +108,9 @@ export default function Details({route, navigation}) {
         </Button>
         <ButtonDetails
           onPress={() =>
-            navigation.navigate('Map', {destination_id: destination_id})
+            navigation.navigate('Map', {
+              destination_name: destination.name[0].text,
+            })
           }>
           <SvgArrowShortUp />
           <LabelDetails style={{textTransform: 'uppercase'}}>
