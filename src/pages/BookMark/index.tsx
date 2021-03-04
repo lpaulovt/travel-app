@@ -1,15 +1,16 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Container, Title, Button, Label} from './styles';
 
-export default function BookMark() {
+export default function BookMark({navigation}) {
   return (
-    <View>
-      <Text> ssdfdsfsdfddgdfgf dfgdfgdfgdfgdfgdfgdf\</Text>
-      <Text> ssdfdsfsdfddgdfgf oo\</Text>
-      <Text> ssdfdsfsdfddgdfgf \</Text>
-      <Text> ssdfdsfsdfddgdfgf \</Text>
-      <Text> ssdfdsfsdfddgdfgf \</Text>
-      <Text> dfgdfgdfgdfgdfgdfgdf\</Text>
-    </View>
+    <Container>
+      <Title>Under construction...</Title>
+      <Button
+        onPress={() => {
+          navigation.navigate('Details');
+        }}>
+        <Label>Go to home</Label>
+      </Button>
+    </Container>
   );
 }

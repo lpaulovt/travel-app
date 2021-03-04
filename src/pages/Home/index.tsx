@@ -55,7 +55,7 @@ export default function Home({navigation}) {
   }, []);
   return (
     <Container>
-      {!isLoading === false ? (
+      {isLoading === false ? (
         <>
           <Header>
             <SvgMenu />
@@ -81,7 +81,7 @@ export default function Home({navigation}) {
           />
           {destinations === null ? null : (
             <Carousel
-              firstItem={1}
+              firstItem={2}
               callbackOffsetMargin={0}
               data={destinations}
               sliderWidth={width}
@@ -126,13 +126,13 @@ export default function Home({navigation}) {
                 width={300}
                 LinearGradient={LinearGradient}
                 duration={1000}
-                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+                shimmerColors={['#282828', '#373737', '#282828']}
               />
               <ShimmerPlaceHolder
                 style={{height: 17, width: 70, marginTop: 10}}
                 LinearGradient={LinearGradient}
                 duration={1000}
-                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+                shimmerColors={['#282828', '#373737', '#282828']}
               />
             </ContainerItem>
             <ContainerItem>
@@ -147,13 +147,13 @@ export default function Home({navigation}) {
                 width={300}
                 LinearGradient={LinearGradient}
                 duration={1000}
-                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+                shimmerColors={['#282828', '#373737', '#282828']}
               />
               <ShimmerPlaceHolder
                 style={{height: 17, width: 70, marginBottom: 20}}
                 LinearGradient={LinearGradient}
                 duration={1000}
-                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+                shimmerColors={['#282828', '#373737', '#282828']}
               />
             </ContainerItem>
             <ContainerItem>
@@ -162,13 +162,13 @@ export default function Home({navigation}) {
                 width={300}
                 LinearGradient={LinearGradient}
                 duration={1000}
-                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+                shimmerColors={['#282828', '#373737', '#282828']}
               />
               <ShimmerPlaceHolder
                 style={{height: 17, width: 70, marginTop: 10}}
                 LinearGradient={LinearGradient}
                 duration={1000}
-                shimmerColors={['#3E3E3E', '#5D5C5C', '#4E4E4E']}
+                shimmerColors={['#282828', '#373737', '#282828']}
               />
             </ContainerItem>
           </ContainerCountry>
@@ -185,7 +185,7 @@ export default function Home({navigation}) {
               duration={1000}
               width={350}
               location={[0.35, 0.5, 0.7]}
-              shimmerColors={['#1f1f1f', '#414141', '#2a2a2a']}
+              shimmerColors={['#282828', '#373737', '#282828']}
             />
 
             <ShimmerPlaceHolder
@@ -198,9 +198,9 @@ export default function Home({navigation}) {
               }}
               LinearGradient={LinearGradient}
               duration={1000}
-              width={350}
+              width={200}
               location={[0.35, 0.5, 0.7]}
-              shimmerColors={['#1f1f1f', '#414141', '#2a2a2a']}
+              shimmerColors={['#282828', '#373737', '#282828']}
             />
 
             <ShimmerPlaceHolder
@@ -215,7 +215,7 @@ export default function Home({navigation}) {
               duration={1000}
               width={350}
               location={[0.35, 0.5, 0.7]}
-              shimmerColors={['#1f1f1f', '#414141', '#2a2a2a']}
+              shimmerColors={['#282828', '#373737', '#282828']}
             />
           </ContainerCountry>
         </>
