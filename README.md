@@ -6,20 +6,17 @@
   Design on Dribbble: <a href="https://dribbble.com/shots/14924767-Travel-App-UI">Travel App</a>
 </h4>
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/lpaulovt/react-native-sport-place-finder.svg">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/lpaulovt/travel-app.svg">
   
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lpaulovt/react-native-sport-place-finder.svg">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lpaulovt/travel-app.svg">
   
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/lpaulovt/react-native-sport-place-finder.svg">
-  <a href="https://github.com/lukemorales/nubank-react-native/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lpaulovt/react-native-sport-place-finder.svg">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/lpaulovt/travel-app.svg">
+
+  <a href="https://github.com/lpaulovt/travel-app/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/lpaulovt/travel-app.svg">
   </a>
   
-  <a href="https://github.com/lpaulovt/react-native-sport-place-finder/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/lpaulovt/react-native-sport-place-finder.svg">
-  </a>
-  
-  <img alt="GitHub" src="https://img.shields.io/github/license/lpaulovt/react-native-sport-place-finder.svg"> 
+  <img alt="GitHub" src="https://img.shields.io/github/license/lpaulovt/travel-app.svg"> 
 </p>
 
 <p align="center">
@@ -38,8 +35,15 @@
 This project was developed with the with the following technologies:
 
 - [React Native](http://facebook.github.io/react-native/)
+- [Styled Components]()
+- [React Native Mapbox]()
 - [React Navigation](https://reactnavigation.org/)
 - [React Native Gesture Handler](https://kmagiera.github.io/react-native-gesture-handler/)
+- [React Native Snap Carousel]()
+- [React Native Linear Gradient]()
+- [React Native Shimmer Placeholder]()
+- [React Native Svg]()
+- [Prismic Javascript]()
 - [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
 ## :warning: Prerequisites
@@ -54,10 +58,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/lpaulovt/react-native-sport-place-finder.git
+$ git clone https://github.com/lpaulovt/travel-app.git
 
 # Go into the repository
-$ cd react-native-sport-place-finder
+$ cd travel-app
 
 # Install dependencies
 $ yarn install
@@ -68,7 +72,7 @@ $ react-native run-android
 
 ## :memo: License
 
-This project is under the MIT license. See the [LICENSE](https://github.com/lpaulovt/react-native-sport-place-finder/blob/main/LICENSE) for more information.
+This project is under the MIT license. See the [LICENSE](https://github.com/lpaulovt/travel-app/blob/main/LICENSE) for more information.
 
 ---
 
