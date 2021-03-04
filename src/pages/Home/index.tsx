@@ -15,9 +15,9 @@ import {
   ContainerCountry,
   ContainerItem,
 } from './styles';
+
 import CarouselItem from '../../components/CarouselItem';
 import Country from '../../components/Country/index';
-
 import SvgGreece from '../../assets/SvgGreece';
 import SvgMenu from '../../assets/SvgMenu';
 import SvgPoland from '../../assets/SvgPoland';
